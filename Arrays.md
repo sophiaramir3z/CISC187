@@ -81,7 +81,7 @@ If you want to count every "apple" in an array of size N, you must scan the enti
 
 Steps: N
 
-## 5. 
+## 5. Find the memory address of an array
 ```cpp
 #include <iostream>
 using namespace std;
