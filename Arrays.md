@@ -1,5 +1,8 @@
 # Activity 1 - Arrays
 
+## Explanation Video
+https://sdccd.us-west-2.instructuremedia.com/embed/3ada3b3b-6528-4b9b-b5a3-c6ca7fd5939d 
+
 ## 1. Array of 100 Elements
 ```cpp
 #include <iostream>
