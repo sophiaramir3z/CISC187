@@ -1,6 +1,6 @@
 # Sorting algorithms
 
-## Video Explanation:
+## Video Explanation: https://sdccd.us-west-2.instructuremedia.com/embed/12bbb477-a596-461d-a80b-99f173e2d34f
 
 ## Task 1
 
