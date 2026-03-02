@@ -36,15 +36,75 @@ Average case is about half of that triangle for movement, still Θ(N²).
 ```
 Even though the constant changes (half the triangle instead of the full triangle), Big O ignores constants, so it is still O(N²).
 
-## 2. Counting operations for insertion sort with N = 5 in descending order
+## 2. Counting operations 
 
 ## a) Start at i = 1. Verify total operations = 20.
-## b) Start the algorithm at i = 2, then start at i = 3. Count operations again.
-## c) For (b), does the algorithm still sort the entire array?
+- Array: [5, 4, 3, 2, 1]
+- Worst case: every comparison causes a shift
+Pass breakdown:
+- i = 1
+  - Comparisons: 1
+  - Shifts: 1
+  - Total = 2
 
+- i = 2
+  - Comparisons: 2
+  - Shifts: 2
+  - Total = 4
+
+- i = 3
+  - Comparisons: 3
+  - Shifts: 3
+  - Total = 6
+
+- i = 4
+  - Comparisons: 4
+  - Shifts: 4
+  - Total = 8
+
+Total operations = 2 + 4 + 6 + 8 = 20
+
+## b) Start at different indices.
+Start at i = 2
+- i = 2 → total = 4
+- i = 3 → total = 6
+- i = 4 → total = 8
+Total = 18 operations
+
+Start at i = 3
+- i = 3 → total = 6
+- i = 4 → total = 8
+Total = 14 operations
+
+## c) Does it still sort the whole array?
+- No
+- Insertion sort assumes:
+  - Left side is already sorted before each pass
+- If starting at i = 2 or i = 3:
+  - The first part is still unsorted
+  - Later insertions use an unsorted prefix
+- Result → array is not guaranteed to be fully sorted
 
 ## 3. containsX(string) analysis and improvement
 
-## (a) Time complexity in Big O
+## a) Time complexity in Big O
+- Scans string once
+- O(n)
+  
+## b) Modify the code to improve best and average case efficiency
+```cpp
+#include <string>
+using namespace std;
 
-## (b) Modify the code to improve best and average case efficiency
+bool containsX(const string& str) {
+    for (int i = 0; i < str.length(); i++) {
+        if (str[i] == 'X') {
+            return true;
+        }
+    }
+    return false;
+}
+```
+- Stops early if found
+- Best case → O(1)
+- Worst case → O(n)
