@@ -1,6 +1,6 @@
 # Sorting algorithms
 
-## Explanation video:
+## Explanation video: https://sdccd.us-west-2.instructuremedia.com/embed/124308ba-f3c2-4f1e-84aa-45c9b56c60d4
 
 ## 1. Average-case time complexity of insertion sort = O(N²)
 - Insertion sort processes one element at a time and inserts it into the sorted left portion
@@ -108,3 +108,5 @@ bool containsX(const string& str) {
 - Stops early if found
 - Best case → O(1)
 - Worst case → O(n)
+
+## Presentation Link: https://www.canva.com/design/DAHCxu-GfaM/tHiTVBmZaWjpNXfRFOsIJw/edit?utm_content=DAHCxu-GfaM&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton
