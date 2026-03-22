@@ -1,6 +1,6 @@
 # Arrays Honors Contract
 
-## Link to Video:
+## Link to Video: http://tiny.cc/H2Vid
 ## Link to Slides: http://tiny.cc/DataAnalyst 
 # a. Approach
 ## Input
