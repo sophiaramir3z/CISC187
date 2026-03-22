@@ -42,4 +42,105 @@ Overall, the results demonstrate that although linked lists offer theoretical ad
 lower allocation overhead, and cache efficiency make them the preferred choice for large-scale data processing. Figures included in this report illustrate execution time and memory usage across input sizes, 
 reinforcing the conclusion that real-world performance is governed as much by hardware interaction as by algorithmic complexity.
 
+## The Code
+```cpp
+#include <iostream>
+#include <vector>
+#include <list>
+#include <chrono>
+
+using namespace std;
+using namespace chrono;
+
+void test_vector_front(int n) {
+    vector<int> v;
+    auto start = steady_clock::now();
+
+    for (int i = 0; i < n; i++) {
+        v.insert(v.begin(), i);
+    }
+
+    auto end = steady_clock::now();
+    cout << "Vector front insert (" << n << "): "
+         << duration_cast<seconds>(end - start).count() << "s\n";
+}
+
+void test_list_front(int n) {
+    list<int> l;
+    auto start = steady_clock::now();
+
+    for (int i = 0; i < n; i++) {
+        l.push_front(i);
+    }
+
+    auto end = steady_clock::now();
+    cout << "List front insert (" << n << "): "
+         << duration_cast<seconds>(end - start).count() << "s\n";
+}
+
+void test_vector_back(int n) {
+    vector<int> v;
+    auto start = steady_clock::now();
+
+    for (int i = 0; i < n; i++) {
+        v.push_back(i);
+    }
+
+    auto end = steady_clock::now();
+    cout << "Vector back insert (" << n << "): "
+         << duration_cast<seconds>(end - start).count() << "s\n";
+}
+
+void test_list_back(int n) {
+    list<int> l;
+    auto start = steady_clock::now();
+
+    for (int i = 0; i < n; i++) {
+        l.push_back(i);
+    }
+
+    auto end = steady_clock::now();
+    cout << "List back insert (" << n << "): "
+         << duration_cast<seconds>(end - start).count() << "s\n";
+}
+
+void test_iteration(int n) {
+    vector<int> v(n, 1);
+    list<int> l(n, 1);
+
+    int sum = 0;
+
+    auto start = steady_clock::now();
+    for (int i = 0; i < v.size(); i++) sum += v[i];
+    auto end = steady_clock::now();
+    cout << "Vector for-loop: "
+         << duration_cast<milliseconds>(end - start).count() << "ms\n";
+
+    start = steady_clock::now();
+    for (auto it = l.begin(); it != l.end(); ++it) sum += *it;
+    end = steady_clock::now();
+    cout << "List iterator loop: "
+         << duration_cast<milliseconds>(end - start).count() << "ms\n";
+}
+
+int main() {
+    vector<int> sizes = {100000000, 200000000, 300000000};
+
+    for (int n : sizes) {
+        test_vector_front(n);
+        test_list_front(n);
+        test_vector_back(n);
+        test_list_back(n);
+        cout << "------------------------\n";
+    }
+
+    test_iteration(100000000);
+}
+```
+
+## The Graphs
+<img width="1919" height="1076" alt="image" src="https://github.com/user-attachments/assets/58169843-fbb7-4b96-ae7e-5a5585cab3bc" />
+<img width="1919" height="1079" alt="image" src="https://github.com/user-attachments/assets/e49be1b4-6b75-4ce5-b5e1-4b86c500236c" />
+<img width="1919" height="1065" alt="image" src="https://github.com/user-attachments/assets/9b82a3db-eafb-4d65-9497-5636d5fcc441" />
+
 
