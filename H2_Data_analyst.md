@@ -1,7 +1,7 @@
 # Arrays Honors Contract
 
 ## Link to Video:
-## Link to Slides: https://www.canva.com/design/DAHEoSqzzE0/z0cHfA-Htz88eYM9ecMJJA/view?utm_content=DAHEoSqzzE0&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=hefb543b166 
+## Link to Slides: tiny.cc/qno0101
 # a. Approach
 ## Input
 The input is a sequence of monthly sales values stored in an array or vector. Each value represents the sales for one month. For the given dataset, the input would be:
