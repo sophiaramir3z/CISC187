@@ -1,5 +1,7 @@
 # Performance Evaluation of Arrays, Linked Lists, and Iteration in C++
 
+## Slides:http://tiny.cc/LinkedLists
+## Presentation: 
 This project evaluates the performance of arrays and linked lists in C++, implemented as ```std::vector``` and ```std::list```, across large input sizes of 100 million, 200 million, and 300 million elements. 
 The goal is to compare both data structures in terms of execution time and memory usage under common operations, and to analyze how iteration strategies impact performance. Beyond asymptotic complexity, 
 this study emphasizes real-world factors such as cache behavior, allocation overhead, and profiling distortion.
